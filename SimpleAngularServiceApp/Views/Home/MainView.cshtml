@@ -1,0 +1,39 @@
+﻿<div class="jumbotron">
+    <h1>Main</h1>
+
+</div>
+
+<div class="row" ng-app="app">
+    <div class="col-md-12" ng-controller="mainCtrl">
+        <div class="well well-sm">
+            <div class="pull-right">
+
+            </div>
+            <strong>Product View</strong>
+            <div class="btn-group">
+                <a class="btn btn-default btn-sm" id="p-grid" href="#" ng-click="showProductGrid()"><i class='glyphicon glyphicon-th'> </i><span class="hidden-xs">Grid</span> </a>
+                <a class="btn btn-default btn-sm" id="p-list" href="#" ng-click="showProductList()"><i class='glyphicon glyphicon-align-justify'></i><span class="hidden-xs">List</span></a>
+                <a class="btn btn-default btn-sm" id="p-table" href="#" ng-click="showProductTable()"><i class="glyphicon glyphicon-list"></i><span class="hidden-xs">Table</span></a>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form id="test">
+                    <div ng-include="templateSelected.url" >
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/Scripts/angular.js")
+    @Scripts.Render("~/Scripts/angular-cookies.min.js")
+    @Scripts.Render("~/Scripts/angular-route.js")
+    @Scripts.Render("~/Ng/app.module.js")
+    @Scripts.Render("~/Ng/mainCtrl.js")
+}

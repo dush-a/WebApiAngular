@@ -1,0 +1,40 @@
+﻿<table class="table table-bordered table-hover table-condensed table-striped " id="ProductTable">
+
+    <thead>
+        <tr>
+            <th> ID</th>
+            <th> Name</th>
+            <th> Description </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in products">
+            <td>
+                <span e-name="Id" class="test1" e-form="rowform" e-required>
+                    {{ item.Id || '-1' }}
+                </span>
+            </td>
+            <td>
+
+                <span e-name="Name" e-form="rowform" >
+                    {{ item.ProductName }}
+                </span>
+            </td>
+            <td>
+                <span e-name="item.Description" e-form="rowform" >
+                    {{ item.Description }}
+                </span>
+            </td>
+            <td style="white-space: nowrap">
+
+               
+                <div class="buttons" ng-show="!rowform.$visible">
+                    <a ng-click="rowform.$show()" title="Edit" href="#" class="btn"> <i class='glyphicon glyphicon-edit'></i></a>
+                    <a href="" ng-click="removeProduct($index)" title="Delete"><i class='glyphicon glyphicon-trash'> </i> </a>
+                </div>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>

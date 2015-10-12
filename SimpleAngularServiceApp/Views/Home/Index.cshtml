@@ -1,0 +1,39 @@
+﻿<div class="jumbotron">
+    <h1>ASP.NET Web API for AngularJS</h1>
+   
+</div>
+<div class="row" ng-app="app">
+    <div class="col-md-12" ng-controller="homeCtrl">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="test">
+                    <div data-ng-repeat="item in products">
+                        <div class="col-sm-4 column productbox">
+                            <div class="producttitle">{{item.ProductName}}</div> <div class="action"></div>
+                            <div class="productprice">
+                                <div class="pull-right">
+                                    <div >{{item.Id}}</div> 
+                                    <a href="#" class="btn btn-danger btn-sm" role="button">
+                                        <span class="glyphicon glyphicon-arrow-right"></span>
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </a>
+                                    <a href="" class="btn btn-danger btn-sm" role="button"><span class="glyphicon glyphicon-arrow-right"></span> Get Quote</a>
+                                </div>
+                                <div class="pricetext">{{item.Description}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/Scripts/angular.js")
+    @Scripts.Render("~/Scripts/angular-cookies.min.js")
+    @Scripts.Render("~/Scripts/angular-route.js")
+    @Scripts.Render("~/Ng/app.module.js")
+    @Scripts.Render("~/Ng/homeCtrl.js")
+}
